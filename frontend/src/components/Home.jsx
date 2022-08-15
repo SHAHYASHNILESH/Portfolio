@@ -123,6 +123,14 @@ const Home = ({ timelines }) => {
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+      {/* <div className="homeCanvasContainer">
+        <Typography variant="h1">
+          <p>Y</p>
+          <p>A</p>
+          <p>S</p>
+          <p>H</p>
+        </Typography>
+      </div> */}
       <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
         <TimeLine timelines={[1, 2, 3, 4]} />
