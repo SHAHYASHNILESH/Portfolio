@@ -35,26 +35,33 @@ module.exports.loginUser = async function loginUser(req, res) {
   }
 };
 
-module.exports.logoutUser = async function logoutUser(req, res) {
-  try {
-    res
-      .status(200)
-      .cookie("token", null, {
-        expires: new Date(Date.now()),
-        httpOnly: true,
-      })
-      .json({
-        message: "User logged out successfully",
-        data: user,
-        success: true,
-      });
-  } catch (err) {
-    res.status(400).json({
-      success: false,
-      message: err.message,
-    });
-  }
-};
+// module.exports.logout= async function logout(req, res) {
+//   try {
+//     res
+//       .status(200)
+//       .cookie("token", null, {
+//         expires: new Date(Date.now()),
+//         httpOnly: true,
+//       })
+//       .json({
+//         message: "User logged out successfully",
+//         data: user,
+//         success: true,
+//       });
+//   } catch (err) {
+//     res.status(400).json({
+//       success: false,
+//       message: err.message,
+//     });
+//   }
+// };
+
+module.exports.logout=function logout(req,res){
+  res.cookie('token',' ',{maxAge:1});
+  res.json({
+      message:"User Logged out successfully"
+  })
+}
 
 module.exports.getUser = async function getUser(req, res) {
   try {
