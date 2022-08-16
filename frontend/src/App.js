@@ -12,6 +12,7 @@ import { getUser, loadUser } from "./actions/user";
 import AdminPanel from "./components/AdminPanel";
 import TimeLines from "./components/TimeLines";
 import Project from "./components/Project";
+import Loader from "./components/Loader";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state.login);
@@ -26,7 +27,7 @@ function App() {
   return (
     <Router>
       {loading ? (
-        <div>Loading</div>
+        <Loader/>
       ) : (
         <>
           <Header />

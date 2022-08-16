@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path=require("path");
 const userModel = require("./models/userModel");
 const cookieParser = require("cookie-parser");
 
@@ -15,3 +16,8 @@ app.listen(4000, () => {
 const userRouter = require("./Routers/userRouter");
 const { urlencoded } = require("express");
 app.use("/api/v1", userRouter);
+
+app.use(express.static(path.resolve("../frontend/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve("../frontend/build/index.html"));
+});
