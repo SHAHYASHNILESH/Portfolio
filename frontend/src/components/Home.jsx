@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import * as THREE from "three";
+import { useDispatch, useSelector } from "react-redux";
 import moonImage from "../images/moon.jpg";
 import venusImage from "../images/venus.jpg";
 import spaceImage from "../images/space.jpg";
@@ -25,7 +26,10 @@ import { AiOutlineConsoleSql } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { MouseOutlined } from "@mui/icons-material";
 
-const Home = ({ timelines, skills }) => {
+const Home = () => {
+  const { loading, user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  //console.log(user);
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
 
@@ -129,13 +133,11 @@ const Home = ({ timelines, skills }) => {
           <p>A</p>
           <p>S</p>
           <p>H</p>
-         
         </Typography>
         <div className="homeCanvasBox">
-          
           <Typography variant="h2">APP DEVELOPER</Typography>
           <Typography variant="h2">FULL STACK DEVELOPER</Typography>
-          <Typography variant="h2">STUDENT</Typography>    
+          <Typography variant="h2">STUDENT</Typography>
         </div>
 
         <Link to="/projects">VIEW WORK</Link>
@@ -146,14 +148,14 @@ const Home = ({ timelines, skills }) => {
 
       <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
-        <TimeLine timelines={[1,2,3]} />
+        <TimeLine timelines={[1, 2, 3]} />
       </div>
       <div className="homeSkills">
         <Typography variant="h3">SKILLS</Typography>
         <div className="homeCubeSkills">
           <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
             <img
-              // src={skills?.image1.url}
+              // src={user.skills.image1.url}
               src="https://www.heise.de/download/media/mongodb-82926/mongodb-logo_1-1-30.png"
               alt="Face1"
             />

@@ -19,7 +19,7 @@ function App() {
   const {loading,user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  console.log(user);
+  //console.log(user);
   useEffect(() => {
     dispatch(getUser());
     dispatch(loadUser());
@@ -34,7 +34,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home timelines={user?.timeline} skills={user?.skills} />}
+              element={<Home/>}
             />
             <Route path="/about" element={<About/>} />
             <Route path="/projects" element={<Projects />} />
