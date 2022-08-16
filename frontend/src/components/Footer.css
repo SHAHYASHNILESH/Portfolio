@@ -1,8 +1,9 @@
 .footer {
     background-color: rgb(26, 26, 26);
-    padding: 3vmax;
+    padding-top:80px;
+    padding-left: 10px;
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 3fr 3fr 1fr;
   }
   .footer > div > h5 {
     color: white;

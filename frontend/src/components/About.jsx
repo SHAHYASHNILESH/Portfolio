@@ -6,7 +6,10 @@ const About = () => {
   return (
     <div className="about">
       <div className="aboutContainer">
-        <Typography>This is sample quote</Typography>
+        <Typography>
+          Keep your face always toward the sunshine, and shadows will fall
+          behind you
+        </Typography>
       </div>
       <div className="aboutContainer2">
         <div>
@@ -23,7 +26,7 @@ const About = () => {
           </Typography>
           <Typography>Full Stack Developer</Typography>
           <Typography style={{ margin: "1vmax 0", textAlign: "center" }}>
-            I am a student
+            I am a student and a developer
           </Typography>
         </div>
         <div>
@@ -35,10 +38,8 @@ const About = () => {
               textAlign: "right",
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-            explicabo illo, maxime suscipit ex beatae libero voluptas est ab,
-            iure non velit autem vel in, eius doloremque fugit. Eligendi,
-            minima.
+            I am 20 years old.I am currently pursuing Btech in the stream of IT
+            from DJ Sanghvi College of Engineering
           </Typography>
         </div>
       </div>

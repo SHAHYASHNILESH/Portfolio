@@ -23,11 +23,11 @@ userRouter.route("/me").get(myProfile);
 
 userRouter.route("/admin/update").put(isAuthenticated, updateUser);
 
-userRouter.route("/admin/timeline/add").post(addTimeline);
-userRouter.route("/admin/project/add").post(addProjects);
+userRouter.route("/admin/timeline/add").post(isAuthenticated,addTimeline);
+userRouter.route("/admin/project/add").post(isAuthenticated,addProjects);
 
-userRouter.route("/admin/timeline/:id").delete(deleteTimeline);
-userRouter.route("/admin/project/:id").post(deleteProject);
+userRouter.route("/admin/timeline/:id").delete(isAuthenticated,deleteTimeline);
+userRouter.route("/admin/project/:id").post(isAuthenticated,deleteProject);
 
 userRouter.route("/contact").post(ContactUs);
 

@@ -62,7 +62,7 @@
   }
   
   .projectCard > div:first-child::after {
-    content: "VIEW DEMO";
+    /* content: "VIEW DEMO"; */
     width: 100%;
     height: 100%;
     font: 100 2rem "Roboto";
@@ -98,7 +98,7 @@
   }
   
   .projectCard:hover div:first-child {
-    filter: hue-rotate(240deg) blur(3px);
+    filter: hue-rotate(240deg) blur(2px);
   }
   
   @keyframes projectCardAnimation {

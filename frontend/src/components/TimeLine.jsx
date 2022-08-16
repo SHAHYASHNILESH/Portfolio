@@ -12,16 +12,17 @@ import Typography from "@mui/material/Typography";
 const TimeLine = ({ timelines = [] }) => {
   return (
     <div>
+     
       <Timeline position="alternate">
-        {timelines.map((item, index) => (
-          <TimelineItem key={index}>
+        
+          <TimelineItem >
             <TimelineOppositeContent
               sx={{ m: "auto 0" }}
               align="right"
               variant="body2"
               color="text.secondary"
             >
-              08/14/2022
+              16/08/2022
             </TimelineOppositeContent>
 
             <TimelineSeparator>
@@ -32,11 +33,33 @@ const TimeLine = ({ timelines = [] }) => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6">Title</Typography>
-              <Typography>Description</Typography>
+              <Typography variant="h6">Item1</Typography>
+              <Typography>This is sample Item-1</Typography>
             </TimelineContent>
           </TimelineItem>
-        ))}
+          <TimelineItem >
+            <TimelineOppositeContent
+              sx={{ m: "auto 0" }}
+              align="right"
+              variant="body2"
+              color="text.secondary"
+            >
+              18/08/2022
+            </TimelineOppositeContent>
+
+            <TimelineSeparator>
+              <TimelineConnector />
+              <TimelineDot>
+                <Event />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: "12px", px: 2 }}>
+              <Typography variant="h6">Item2</Typography>
+              <Typography>This is sample Item-2</Typography>
+            </TimelineContent>
+          </TimelineItem>
+       
       </Timeline>
     </div>
   );

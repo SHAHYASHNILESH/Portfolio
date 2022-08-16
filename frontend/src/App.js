@@ -10,11 +10,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getUser, loadUser } from "./actions/user";
 import AdminPanel from "./components/AdminPanel";
+import TimeLines from "./components/TimeLines";
+import Project from "./components/Project";
 
 function App() {
-  const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.login);
-  const { loading } = useSelector((state) => state.user);
+  const {loading,user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  console.log(user);
   useEffect(() => {
     dispatch(getUser());
     dispatch(loadUser());
@@ -27,13 +31,24 @@ function App() {
         <>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route
+              path="/"
+              element={<Home timelines={user?.timeline} skills={user?.skills} />}
+            />
+            <Route path="/about" element={<About/>} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route
               path="/account"
               element={isAuthenticated ? <AdminPanel /> : <Login />}
+            />
+            <Route
+              path="/admin/timeline"
+              element={isAuthenticated ? <TimeLines /> : <Login />}
+            />
+            <Route
+              path="/admin/project"
+              element={isAuthenticated ? <Project /> : <Login />}
             />
           </Routes>
           <Footer />

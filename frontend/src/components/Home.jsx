@@ -25,7 +25,7 @@ import { AiOutlineConsoleSql } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { MouseOutlined } from "@mui/icons-material";
 
-const Home = ({ timelines }) => {
+const Home = ({ timelines, skills }) => {
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
 
@@ -111,77 +111,102 @@ const Home = ({ timelines }) => {
       camera.rotation.z = window.scrollY * 0.001;
       camera.rotation.y = window.scrollY * 0.003;
 
-      const skillsBox = document.getElementById("homeskillsBox");
+      const skillsBox = document.getElementById("homeSkillsBox");
 
-      if (window.scrollY > 1500) {
-        skillsBox.style.animationName = "homeskillsBoxAnimationOn";
+      if (window.scrollY > 500) {
+        skillsBox.style.animationName = "homeSkillsBoxAnimationOn";
       } else {
-        skillsBox.style.animationName = "homeskillsBoxAnimationOff";
+        skillsBox.style.animationName = "homeSkillsBoxAnimationOff";
       }
     });
   }, []);
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
-      {/* <div className="homeCanvasContainer">
-        <Typography variant="h1">
+      <div className="homeCanvasContainer">
+        <Typography variant="h4">
           <p>Y</p>
           <p>A</p>
           <p>S</p>
           <p>H</p>
+         
         </Typography>
-      </div> */}
+        <div className="homeCanvasBox">
+          
+          <Typography variant="h2">APP DEVELOPER</Typography>
+          <Typography variant="h2">FULL STACK DEVELOPER</Typography>
+          <Typography variant="h2">STUDENT</Typography>    
+        </div>
+
+        <Link to="/projects">VIEW WORK</Link>
+      </div>
+      <div className="homeScrollBtn">
+        <MouseOutlined />
+      </div>
+
       <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
-        <TimeLine timelines={[1, 2, 3, 4]} />
+        <TimeLine timelines={[1,2,3]} />
       </div>
       <div className="homeSkills">
         <Typography variant="h3">SKILLS</Typography>
         <div className="homeCubeSkills">
           <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills?.image1.url}
+              src="https://www.heise.de/download/media/mongodb-82926/mongodb-logo_1-1-30.png"
               alt="Face1"
             />
           </div>
           <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills.image2.url}
+              src="https://www.edureka.co/blog/wp-content/uploads/2019/07/express-logo.png"
               alt="Face2"
             />
           </div>
 
           <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills.image3.url}
+              src="https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124"
               alt="Face3"
             />
           </div>
 
           <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills.image4.url}
+              src="https://blog.logrocket.com/wp-content/uploads/2019/10/nodejs.png"
               alt="Face4"
             />
           </div>
 
           <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills.image5.url}
+              src="https://play-lh.googleusercontent.com/85WnuKkqDY4gf6tndeL4_Ng5vgRk7PTfmpI4vHMIosyq6XQ7ZGDXNtYG2s0b09kJMw"
               alt="Face5"
             />
           </div>
 
           <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
             <img
-              src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/ts-photographing-the-moon.jpg?itok=SatDhUIo"
+              // src={skills.image6.url}
+              src="http://x7d4c5z5.stackpathcdn.com/wp-content/uploads/2014/10/css3.jpg"
               alt="Face6"
+            />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace7">
+            <img
+              // src={skills.image6.url}
+              src="https://www.computerhope.com/jargon/j/javascript.png"
+              alt="Face7"
             />
           </div>
         </div>
         <div className="cubeShadow"></div>
-        <div className="homeSkillsBox">
-          <SiCplusplus />
+        <div className="homeSkillsBox" id="homeSkillsBox">
           <SiHtml5 />
           <SiCss3 />
           <SiJavascript />

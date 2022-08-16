@@ -111,7 +111,7 @@ module.exports.myProfile = async function myProfile(req, res) {
 
 module.exports.ContactUs = async function ContactUs(req, res) {
   try {
-    const { name, email, password } = req.body;
+    const { name, email,message} = req.body;
     const userMesage = `Hey,I am ${name}.My email is ${email}.My message is ${message}`;
     await sendMail(userMesage);
     res.json({

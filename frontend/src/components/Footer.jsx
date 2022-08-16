@@ -8,11 +8,36 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>
-        <Typography variant="h3">About Me</Typography>
+        <Typography variant="h4" style={{color:'white'}}>About Me</Typography>
         <Typography>
-          Hey, my Name is Yash Nilesh Shah.I am 20 years old.I am currently
-          studying in DJ Sanghvi College of Engineering.I am a Full-Stack
-          Developer.
+          My Name is Shah Yash Nilesh
+        </Typography>
+        <Typography>
+          I am 20 years old
+        </Typography>
+        <Typography>
+          I am currently pursuing Btech in the stream of IT from DJ Sanghvi College of Engineering
+        </Typography>
+        <Typography>
+          Full Stack Developer
+        </Typography>
+      </div>
+      <div>
+      <Typography variant="h4" style={{color:'white'}}>Contact Info</Typography>
+        <Typography>
+          204,Dahisar Vinayak Society
+        </Typography>
+        <Typography>
+           Near Siddhivinayak Temple
+        </Typography>
+        <Typography>
+          Dahisar(West)
+        </Typography>
+        <Typography>
+          Mumbai:400068
+        </Typography>
+        <Typography>
+          8291257146/9892147224
         </Typography>
 
         <Link to="/contact" className="footerContactBtn">
@@ -20,7 +45,7 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <Typography variant="h6">Social Media</Typography>
+        <Typography variant="h4" style={{color:'white'}}>Social Media</Typography>
         <a href="https://github.com/SHAHYASHNILESH" target="black">
           <BsGithub />
         </a>

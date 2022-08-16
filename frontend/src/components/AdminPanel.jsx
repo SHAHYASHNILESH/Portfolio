@@ -1,7 +1,6 @@
 import "./AdminPanel.css";
 import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import "./AdminPanel.css";
 import { AiOutlineProject } from "react-icons/ai";
 import { MdTimeline } from "react-icons/md";
 import { Link } from "react-router-dom";
