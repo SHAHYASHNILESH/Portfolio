@@ -3,13 +3,14 @@ const mongoose = require("mongoose");
 const path=require("path");
 const userModel = require("./models/userModel");
 const cookieParser = require("cookie-parser");
+require('dotenv').config();
 
 const app = express();
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
 
-app.listen(4000, () => {
+app.listen(process.env.PORT||4000, () => {
   console.log("Server is listening at Port 4000");
 });
 
