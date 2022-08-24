@@ -192,12 +192,12 @@
 .homeSkillsBox {
   background-color: hsl(250, 100%, 75%);
   padding: 0 1vmax;
-  margin-top: 50px;
+  margin-top: 170px;
   position: absolute;
   display: flex;
   flex-direction: column;
   right: -300px;
-  animation-duration: 8s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }

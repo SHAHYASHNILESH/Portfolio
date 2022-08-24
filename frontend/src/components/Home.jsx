@@ -18,8 +18,9 @@ import {
   SiHtml5,
   SiThreedotjs,
   SiFlutter,
+  SiDjango,
 } from "react-icons/si";
-import { FaJava, FaPython } from "react-icons/fa";
+import { FaJava, FaPython,FaPhp} from "react-icons/fa";
 import { BsBootstrapFill } from "react-icons/bs";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 
@@ -221,6 +222,8 @@ const Home = () => {
           <BsBootstrapFill />
           <FaPython />
           <AiOutlineConsoleSql />
+          <SiDjango/>
+          <FaPhp/>
           {/* <SiThreedotjs /> */}
         </div>
       </div>
